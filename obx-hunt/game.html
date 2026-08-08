@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Today's Puzzle — Tide Line</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="shell">
+  <div class="top-nav">
+    <a class="brand" href="index.html">
+      <svg class="compass" viewBox="0 0 100 100"><g class="needle"><circle cx="50" cy="50" r="46" fill="none" stroke="#c9a227" stroke-width="2"/><polygon points="50,10 58,50 50,90 42,50" fill="#c9a227"/><circle cx="50" cy="50" r="4" fill="#ecdfb9"/></g></svg>
+      Tide Line
+    </a>
+    <nav>
+      <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+  </div>
+
+  <div class="game-header">
+    <div class="who">Hunting as <span id="player-name">—</span></div>
+    <div class="route-badge" id="day-badge">Day —</div>
+  </div>
+
+  <!-- Locked / no puzzle available -->
+  <div class="waiting-card" id="locked-section" hidden>
+    <p></p>
+  </div>
+
+  <!-- Route choice for today -->
+  <div id="choice-section" hidden>
+    <p class="choice-intro">Pick your route for today. You'll need to solve every clue on it, in order, to get out.</p>
+    <div class="routes" id="choice-cards"></div>
+  </div>
+
+  <div class="game-layout" id="game-layout">
+    <div class="board-panel" id="board-panel" hidden>
+      <svg class="board-svg" id="board-svg"></svg>
+    </div>
+
+    <div class="side-panel">
+      <!-- Active clue for the route in progress -->
+      <div class="clue-card" id="clue-section" hidden>
+        <div class="clue-eyebrow"><span id="active-route-name"></span> &middot; <span id="clue-progress"></span></div>
+        <p class="clue-text" id="clue-text"></p>
+        <form id="answer-form">
+          <input type="text" id="answer-input" placeholder="Your answer" autocomplete="off" required />
+          <button type="submit" class="btn-submit">Solve</button>
+        </form>
+        <div class="feedback" id="answer-feedback"></div>
+        <button type="button" class="btn-link" id="switch-route-btn">Switch to the other route instead</button>
+      </div>
+
+      <!-- Today's route finished -->
+      <div class="done-card" id="solved-section" hidden>
+        <h3>Today's puzzle: solved.</h3>
+        <p>You took the <strong id="solved-route"></strong> and reached <strong id="solved-dest"></strong>.</p>
+        <p>Come back tomorrow for a brand new maze. See how you stack up on the <a href="leaderboard.html">leaderboard</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer">Each puzzle is only here for the day — pick carefully and see it through.</div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/puzzles.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/board.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

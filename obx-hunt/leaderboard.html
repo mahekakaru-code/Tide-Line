@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Leaderboard — Tide Line</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="shell">
+  <div class="top-nav">
+    <a class="brand" href="index.html">
+      <svg class="compass" viewBox="0 0 100 100"><g class="needle"><circle cx="50" cy="50" r="46" fill="none" stroke="#c9a227" stroke-width="2"/><polygon points="50,10 58,50 50,90 42,50" fill="#c9a227"/><circle cx="50" cy="50" r="4" fill="#ecdfb9"/></g></svg>
+      Tide Line
+    </a>
+    <nav>
+      <a href="game.html">Today's Puzzle</a>
+    </nav>
+  </div>
+
+  <div class="hero" style="padding-top:0;">
+    <h1>Leaderboard</h1>
+    <p class="tagline">Every hunter, ranked by how many days they've made it out of the maze. The route column shows what each person chose today.</p>
+  </div>
+
+  <div class="leaderboard-panel">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Today's route</th>
+          <th>Days completed</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard-body">
+        <tr><td colspan="4" class="empty">Loading…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="site-footer">Ties are broken by whoever's latest solve came first.</div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/puzzles.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/leaderboard.js"></script>
+</body>
+</html>
