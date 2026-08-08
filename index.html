@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tide Line — A Scavenger Hunt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="shell">
+  <div class="top-nav">
+    <a class="brand" href="index.html">
+      <svg class="compass" viewBox="0 0 100 100"><g class="needle"><circle cx="50" cy="50" r="46" fill="none" stroke="#c9a227" stroke-width="2"/><polygon points="50,10 58,50 50,90 42,50" fill="#c9a227"/><circle cx="50" cy="50" r="4" fill="#ecdfb9"/></g></svg>
+      Tide Line
+    </a>
+    <nav>
+      <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <svg class="compass compass-large" viewBox="0 0 100 100">
+      <g class="needle">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#c9a227" stroke-width="1.5"/>
+        <polygon points="50,8 60,50 50,92 40,50" fill="#c9a227"/>
+        <circle cx="50" cy="50" r="5" fill="#ecdfb9"/>
+      </g>
+    </svg>
+    <h1>Tide Line</h1>
+    <p class="tagline">A new maze every day. Two ways out — one short and quiet, one longer and in the open. Pick a route, solve every clue on it, and get out before the tide turns. Miss a day, and it's gone — a fresh puzzle is waiting tomorrow.</p>
+
+    <div id="returning-banner" class="returning-banner" hidden>
+      Welcome back, <span></span>. <a href="game.html">Jump back into today's puzzle &rarr;</a>
+    </div>
+  </div>
+
+  <form id="signup-form" class="signup-form">
+    <input type="text" id="name-input" placeholder="Your name" required maxlength="40" />
+    <button type="submit" id="begin-btn" class="btn-primary" disabled>Enter your name to begin</button>
+  </form>
+
+  <div class="site-footer">One puzzle unlocks each day. Choose your route wisely.</div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/puzzles.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/signup.js"></script>
+</body>
+</html>
