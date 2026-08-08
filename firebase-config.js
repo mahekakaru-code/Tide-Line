@@ -5,6 +5,10 @@
    See README.md for step-by-step setup instructions.
    ============================================================ */
 
+/* ============================================================
+   FIREBASE-CONFIG.JS
+   ============================================================ */
+
 const firebaseConfig = {
   apiKey: "AIzaSyAGP9gzIzH1IybZbHnxqFnlB5umebxgznE",
   authDomain: "tide-line.firebaseapp.com",
